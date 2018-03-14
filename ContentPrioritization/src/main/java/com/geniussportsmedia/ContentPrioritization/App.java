@@ -9,22 +9,34 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class App
 {
     public static void main( String[] args ) throws IOException {
-
-
+/*
+        // Create Driver (Chrome Browser)
         WebDriver driver = new ChromeDriver();
+*/
+        // Create Configuration Object
         Configuration c = new Configuration();
+/*
+        // Navigate to Home Page
+        driver.navigate().to(c.baseURL + c.endpoints.get("Home"));
 
-        driver.navigate().to(c.baseURL + c.endpoints.get("Home") + c.defaultLocale);
-
+        // Navigate to InPlay Page
+        driver.navigate().to(c.baseURL + c.endpoints.get("In-Play"));
+*/
         // Request Tree
-        String url = c.baseJSON + c.endpoints.get("FEATURED_TREE");
+        String url = c.baseJSON + c.endpoints.get("OUTRIGHTS_TREE");
         String tree = c.requestEndpoint(url);
         System.out.println(tree);
 
-        // Request Event Market List
-        String event = c.baseEventSpecific + c.eventQuery + "9031";
-        String marketList = c.requestEndpoint(event);
-        System.out.println(tree);
+        // Request Event Specific Market List
+        String event = c.baseSpecific + c.eventQuery + "9031";
+        String eventMarketList = c.requestEndpoint(event);
+        System.out.println(event);
+
+        // Request Competition Specific Market List
+        String competition = c.baseSpecific + c.competitionQuery + "36";
+        String eventCompetitonList = c.requestEndpoint(competition);
+        System.out.println(competition);
+
 
 
         /*  SELENIUM STUFF
