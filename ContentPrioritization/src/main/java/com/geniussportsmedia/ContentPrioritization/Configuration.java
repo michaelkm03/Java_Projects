@@ -11,7 +11,7 @@ import java.util.Map;
 public class Configuration {
 
     // Base URLs and Commands
-    String baseURL_OPAP = "https://prod.pamestoixima.gr/betstream-view/page/opapgeniusbet/desktop";
+    String baseURL = "https://prod.pamestoixima.gr/betstream-view/page/opapgeniusbet/desktop";
     String baseJSON = "https://prod.pamestoixima.gr/betstream-view/customer/betgenius/product/opapgeniusbet/component";
     String baseSpecific = "https://prod.pamestoixima.gr/betstream-view/marketlist/opapgeniusbet/json";
     String eventQuery = "?eventId=";
