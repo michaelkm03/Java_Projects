@@ -10,6 +10,7 @@ public class Configuration {
 
     public String requestEndpoint(String Endpoint) throws IOException {
         URL url = new URL(Endpoint);
+        System.out.println(url);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
         BufferedReader in = new BufferedReader(
@@ -27,9 +28,9 @@ public class Configuration {
     public Map<String, String> generateMap(String name) {
         Map<String, String> map = new HashMap<String, String>();
         if (name == "Volvo") {
-            map.put("xc40", "momentum");
-            map.put("xc60", "momentum");
-            map.put("xc90", "momentum");
+            map.put("momentum-subscription-(-600-month)", "xc40");
+            map.put("r-design-subscription-(-700-month)", "xc40");
+
         }
         else {
             System.out.println("Could not find that car...");
